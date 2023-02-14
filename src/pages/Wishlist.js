@@ -10,6 +10,7 @@ import phone_One from '../images/phone_1.jpg';
 import lap_One from '../images/lap_1.jpg';
 
 import cross from '../images/cross.svg';
+import Image from '../components/Image';
 
 const Wishlist = () => {
     const dataWish = [
@@ -55,9 +56,9 @@ const Wishlist = () => {
                         {dataWish.map((item, index) => (
                             <div className="col-2" key={index} style={{ cursor: 'pointer' }}>
                                 <div className="wishlist-products bg-white position-relative">
-                                    <img className="position-absolute cross" src={cross} alt="cross"></img>
+                                    <Image className="position-absolute cross" src={cross} alt="cross"></Image>
                                     <div>
-                                        <img src={item.image} className="img-fluid" alt="tablet"></img>
+                                        <Image src={item.image} className="img-fluid" alt="tablet"></Image>
                                     </div>
                                     <div className="wishlist-products-details">
                                         <h5 className="title">{item.desc}</h5>

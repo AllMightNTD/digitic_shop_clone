@@ -2,26 +2,27 @@ import ReactStars from 'react-rating-stars-component';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import wish from '../images/wish.svg';
-import tab from '../images/tab.jpg';
-import tab2 from '../images/tab2.jpg';
 import prodcompare from '../images/prodcompare.svg';
 import view from '../images/view.svg';
 import Addcart from '../images/add-cart.svg';
+import Image from './Image';
 
 const ProductCard = ({ classname, grid_home, grid, imageOne, imageTwo, title, desc, valueStar, price }) => {
     let location = useLocation();
 
     return (
         <div
-            className={`${location.pathname == '/store' ? `gr-${grid} ${classname}` : `col-${grid_home} ${classname}`}`}
+            className={`${
+                location.pathname === '/store' ? `gr-${grid} ${classname}` : `col-${grid_home} ${classname}`
+            }`}
         >
             <Link to="/store/:id" className="product-card position-relative">
                 <div className="wish-list position-absolute">
-                    <img src={wish} alt="wishlist"></img>
+                    <Image src={wish} alt="wishlist"></Image>
                 </div>
                 <div className="product-image">
-                    <img src={imageOne} className="img-fluid" alt="product image"></img>
-                    <img src={imageTwo} className="img-fluid" alt="product image"></img>
+                    <Image src={imageOne} className="img-fluid" alt="product image"></Image>
+                    <Image src={imageTwo} className="img-fluid" alt="product image"></Image>
                 </div>
                 <div className="product-details mt-4">
                     <h6 className="brand">{title}</h6>
@@ -33,13 +34,13 @@ const ProductCard = ({ classname, grid_home, grid, imageOne, imageTwo, title, de
                 <div className="action-bar position-absolute">
                     <div className="d-flex flex-column gap-15">
                         <Link>
-                            <img src={prodcompare} alt="prodcompare"></img>
+                            <Image src={prodcompare} alt="prodcompare"></Image>
                         </Link>
                         <Link>
-                            <img src={view} alt="view"></img>
+                            <Image src={view} alt="view"></Image>
                         </Link>
                         <Link>
-                            <img src={Addcart} alt="add-cart"></img>
+                            <Image src={Addcart} alt="add-cart"></Image>
                         </Link>
                     </div>
                 </div>

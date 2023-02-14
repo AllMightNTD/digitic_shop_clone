@@ -1,8 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Image from '../../components/Image';
 
 // main banner
 import mainbanner from '../../images/main-banner.jpg';
+import mainbanner1 from '../../images/main-banner-1.jpg';
 import catbanner1 from '../../images/catbanner-01.jpg';
 import catbanner2 from '../../images/catbanner-02.jpg';
 import catbanner3 from '../../images/catbanner-03.jpg';
@@ -71,7 +73,6 @@ import lap_other from '../../images/Laptop_OtherTwo.jpg';
 // Popular Image
 import Headphone_popular from '../../images/headphone_popular.jpg';
 import Lap_popular from '../../images/lap_popular.jpg';
-import mobile_popular from '../../images/mobile_popular.jpg';
 
 // Blog Imag
 import blog_One from '../../images/blog-5.jpg';
@@ -82,7 +83,6 @@ import blog_Four from '../../images/blog-4.jpg';
 // Icon
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 
-import Slider from 'react-slick';
 import { SmoothHorizontalScrolling } from '../../ultils';
 
 import Container from '../../components/Container';
@@ -515,18 +515,10 @@ const Home = () => {
                 <div className="row">
                     <div className="col-6">
                         <div className="main-banner position-relative">
-                            {/* <img src={mainbanner} className="img-fluid rounded-3" alt="banner"></img>
-                                <div className="main-banner-content position-absolute">
-                                    <h4>SUPERCHARGED FOR PROPS</h4>
-                                    <h5>Iphone 14</h5>
-                                    <p>From 999$ or 1000$</p>
-                                    <Link className="btn-buy">BUY NOW</Link>
-                                </div> */}
-
                             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item rounded-3 active main-banner position-relative">
-                                        <img src={mainbanner} className="img-fluid d-block" alt="..." />
+                                        <Image src={mainbanner} className="img-fluid d-block" alt="..." />
                                         <div className="main-banner-content position-absolute">
                                             <h4>SUPERCHARGED FOR PROPS</h4>
                                             <h5>Iphone 14</h5>
@@ -535,7 +527,7 @@ const Home = () => {
                                         </div>
                                     </div>
                                     <div className="carousel-item main-banner position-relative">
-                                        <img src={mainbanner} className="img-fluid d-block" alt="..." />
+                                        <Image src={mainbanner1} className="img-fluid d-block" alt="..." />
                                         <div className="main-banner-content position-absolute">
                                             <h4> FOR PROPS</h4>
                                             <h5>Iphone 12</h5>
@@ -571,7 +563,7 @@ const Home = () => {
                         <div className="d-flex gap-10 flex-wrap justify-content-between align-items-center">
                             {catbannerdata.map((item, index) => (
                                 <div key={index} className="small-banner position-relative">
-                                    <img src={item.image} alt={item.title} className="img-fluid rounded-3"></img>
+                                    <Image src={item.image} alt={item.title} className="img-fluid rounded-3"></Image>
                                     <div className="small-banner-content position-absolute">
                                         <h4>{item.type}</h4>
                                         <h5>{item.title}</h5>
@@ -589,7 +581,7 @@ const Home = () => {
                         <div className="service d-flex justify-content-around align-items-center">
                             {servicedata.map((item, index) => (
                                 <div key={index} className="d-flex align-items-center gap-15">
-                                    <img src={item.image} alt="service"></img>
+                                    <Image src={item.image} alt="service"></Image>
                                     <div>
                                         <h6>{item.name}</h6>
                                         <p className="mb-0">{item.desc}</p>
@@ -610,7 +602,7 @@ const Home = () => {
                                         <h6>{item.name}</h6>
                                         <p>{item.count}</p>
                                     </div>
-                                    <img src={item.image}></img>
+                                    <Image src={item.image}></Image>
                                 </div>
                             ))}
                         </div>
@@ -637,8 +629,8 @@ const Home = () => {
                                     {/* <img src={wish} alt="wishlist"></img> */}
                                 </div>
                                 <div className="product-image">
-                                    <img src={item.imageOne} className="img-fluid" alt="product image"></img>
-                                    <img src={item.imageTwo} className="img-fluid" alt="product image"></img>
+                                    <Image src={item.imageOne} className="img-fluid" alt="product image"></Image>
+                                    <Image src={item.imageTwo} className="img-fluid" alt="product image"></Image>
                                 </div>
                                 <div className="product-details mt-4">
                                     <h6 className="brand">{item.title}</h6>
@@ -675,7 +667,7 @@ const Home = () => {
                 <div className="row">
                     <div className="col-3">
                         <div className="famous-card position-relative">
-                            <img src={smartbanner} className="img-fluid" alt="famous"></img>
+                            <Image src={smartbanner} className="img-fluid" alt="famous"></Image>
                             <div className="famous-content position-absolute">
                                 <h5>Big Screen</h5>
                                 <h6>Smart Watch Series 7</h6>
@@ -685,7 +677,7 @@ const Home = () => {
                     </div>
                     <div className="col-3">
                         <div className="famous-card position-relative">
-                            <img src={lapbanner} className="img-fluid" alt="famous"></img>
+                            <Image src={lapbanner} className="img-fluid" alt="famous"></Image>
                             <div className="famous-content position-absolute">
                                 <h5 style={{ color: '#777777' }}>SUDIO DISPLAY</h5>
                                 <h6 className="text-dark mb-0">Room-filling sound</h6>
@@ -695,7 +687,7 @@ const Home = () => {
                     </div>
                     <div className="col-3">
                         <div className="famous-card position-relative">
-                            <img src={phonebanner} className="img-fluid" alt="famous"></img>
+                            <Image src={phonebanner} className="img-fluid" alt="famous"></Image>
                             <div className="famous-content position-absolute">
                                 <h5 style={{ color: '#777777' }}>SMARTPHONES</h5>
                                 <h6 className="text-dark mb-0">Iphone 13 Pro</h6>
@@ -707,7 +699,7 @@ const Home = () => {
                     </div>
                     <div className="col-3">
                         <div className="famous-card position-relative">
-                            <img src={speak} className="img-fluid" alt="famous"></img>
+                            <Image src={speak} className="img-fluid" alt="famous"></Image>
                             <div className="famous-content position-absolute">
                                 <h5 style={{ color: '#777777' }}>HOME SPEAKERS</h5>
                                 <h6 className="text-dark mb-0">Room-Filling Sound</h6>
@@ -749,19 +741,19 @@ const Home = () => {
                         <div className="card w-100 d-flex flex-column">
                             <div className="card-product  d-flex align-items-center">
                                 <div className="card-image ">
-                                    <img src={Headphone_popular} className="img-fluid" alt="speaker"></img>
+                                    <Image src={Headphone_popular} className="img-fluid" alt="speaker"></Image>
                                 </div>
                                 <h5 className="title attention">Mobiles & Tablets</h5>
                             </div>
                             <div className="card-product  mt-3 d-flex align-items-center">
                                 <div className="card-image">
-                                    <img src={Lap_popular} className="img-fluid" alt="speaker"></img>
+                                    <Image src={Lap_popular} className="img-fluid" alt="speaker"></Image>
                                 </div>
                                 <h5 className="title">Headphones</h5>
                             </div>
                             <div className="card-product  mt-3 d-flex align-items-center">
                                 <div className="card-image">
-                                    <img src={Headphone_popular} className="img-fluid" alt="speaker"></img>
+                                    <Image src={Headphone_popular} className="img-fluid" alt="speaker"></Image>
                                 </div>
                                 <h5 className="title">Computer & Laptop</h5>
                             </div>
@@ -793,7 +785,7 @@ const Home = () => {
                                 <Marquee className="d-flex">
                                     {dataMarquee.map((item, index) => (
                                         <div key={index} className="w-25 mx-4">
-                                            <img src={item.image} alt="brand-01"></img>
+                                            <Image src={item.image} alt="brand-01"></Image>
                                         </div>
                                     ))}
                                 </Marquee>

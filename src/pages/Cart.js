@@ -1,13 +1,10 @@
 import React from 'react';
-import BreadCrumb from '../components/BreadCrumb';
-import Meta from '../components/Meta';
-import watch from '../images/watch.jpg';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import clock1 from '../images/clock_1.jpg';
 import camera_checkOne from '../images/camera_check1.jpg';
-import NavPay from './NavPay';
 import Container from '../components/Container';
+import Image from '../components/Image';
 const Cart = () => {
     return (
         <>
@@ -23,7 +20,7 @@ const Cart = () => {
                         <div className="cart-data mb-2 py-3 d-flex justify-content-between align-items-center">
                             <div className="cart-col-1 d-flex align-items-center gap-15">
                                 <div className="w-25">
-                                    <img src={clock1} className="img-fluid" alt="img-product"></img>
+                                    <Image src={clock1} className="img-fluid" alt="img-product"></Image>
                                 </div>
                                 <div className="w-75">
                                     <p className="title">E Circle Men Smart Watch for Android Phone Night Black</p>
@@ -47,7 +44,7 @@ const Cart = () => {
                         <div className="cart-data mb-2 py-3 d-flex justify-content-between align-items-center">
                             <div className="cart-col-1 d-flex align-items-center gap-15">
                                 <div className="w-25">
-                                    <img src={camera_checkOne} className="img-fluid" alt="img-product"></img>
+                                    <Image src={camera_checkOne} className="img-fluid" alt="img-product"></Image>
                                 </div>
                                 <div className="w-75 cart-details">
                                     <p className="title">OlymPus pen E-PL9 kit with 14 42 , EZ lens , camera</p>

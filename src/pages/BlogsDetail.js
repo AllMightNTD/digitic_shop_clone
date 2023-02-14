@@ -3,8 +3,9 @@ import BreadCrumb from '../components/BreadCrumb';
 import Meta from '../components/Meta';
 import { BsArrowLeft, BsFacebook } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { BsLinkedin, BsYoutube, BsInstagram, BsGithub } from 'react-icons/bs';
+import { BsYoutube, BsInstagram } from 'react-icons/bs';
 import Container from '../components/Container';
+import Image from '../components/Image';
 const BlogsDetail = () => {
     return (
         <>
@@ -30,10 +31,10 @@ const BlogsDetail = () => {
                             <div className="title">
                                 <h3>A beautiful Sunday Renassance</h3>
                             </div>
-                            <img
+                            <Image
                                 className="img-fluid w-100 my-4"
                                 src="https://dzungsrt.com/wp-content/uploads/2022/05/covid-19-405x284.jpg"
-                            ></img>
+                            ></Image>
                             <p>
                                 You 're only as good as your last collection , which is an enormous pressure. I think
                                 there is something about luxury it's not something people need , but it's what they want

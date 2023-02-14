@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactStars from 'react-rating-stars-component';
 import BreadCrumb from '../components/BreadCrumb';
 import Meta from '../components/Meta';
 import ProductCard from '../components/ProductCard';
-import { ReactDOM } from 'react-dom';
-import ReactImageZoom from 'react-image-zoom';
 import { GoGitCompare } from 'react-icons/go';
 import { GiSelfLove } from 'react-icons/gi';
 import { MdOutlineLocalShipping } from 'react-icons/md';
@@ -12,7 +10,6 @@ import { RxDimensions } from 'react-icons/rx';
 import { IoIosColorWand } from 'react-icons/io';
 import { GiLoveMystery } from 'react-icons/gi';
 import { BsShare } from 'react-icons/bs';
-import { FaCcVisa } from 'react-icons/fa';
 import headphone_Featured from '../images/headphone-featured.jpg';
 import headphone_Two from '../images/headphone_2.jpg';
 
@@ -25,8 +22,8 @@ import phone_One from '../images/phone_1.jpg';
 import phone_Two from '../images/phone_2.jpg';
 import lap_One from '../images/lap_1.jpg';
 import lap_Two from '../images/lap_2.jpg';
+import Image from '../components/Image';
 const ProductsDetails = () => {
-    const [writeReviewCheck, setWriteReview] = useState(true);
     const dataFeature = [
         {
             imageOne: clock1,
@@ -81,24 +78,21 @@ const ProductsDetails = () => {
                         <div className="col-6">
                             <div className="main-product-image">
                                 <div>
-                                    <img src={headphone_Featured} className="img-fluid"></img>
+                                    <Image src={headphone_Featured} className="img-fluid"></Image>
                                 </div>
                             </div>
                             <div className="others-product-image gap-15 d-flex flex-wrap">
                                 <div>
-                                    <img src={headphone_Two} className="img-fluid"></img>
+                                    <Image src={headphone_Two} className="img-fluid"></Image>
                                 </div>
                                 <div>
-                                    {' '}
-                                    <img src={headphone_Two} className="img-fluid"></img>
+                                    <Image src={headphone_Two} className="img-fluid"></Image>
                                 </div>
                                 <div>
-                                    {' '}
-                                    <img src={headphone_Two} className="img-fluid"></img>
+                                    <Image src={headphone_Two} className="img-fluid"></Image>
                                 </div>
                                 <div>
-                                    {' '}
-                                    <img src={headphone_Two} className="img-fluid"></img>
+                                    <Image src={headphone_Two} className="img-fluid"></Image>
                                 </div>
                             </div>
                         </div>
@@ -113,13 +107,13 @@ const ProductsDetails = () => {
                                         <ReactStars count={5} edit={false} value="4" size={24} activeColor="#ffd700" />
                                         <p className="mb-0">Based on 2 reviews</p>
                                     </div>
-                                    {writeReviewCheck && (
-                                        <div>
-                                            <a href="" className="mb-2 reviews-link">
-                                                Write a Review
-                                            </a>
-                                        </div>
-                                    )}
+
+                                    {/* Có điều kiện check */}
+                                    <div>
+                                        <a href="/store/:id" className="mb-2 reviews-link">
+                                            Write a Review
+                                        </a>
+                                    </div>
                                 </div>
                                 <div className="border-text py-2">
                                     <div className="type_and-products gap-10 d-flex my-3">
@@ -325,11 +319,11 @@ const ProductsDetails = () => {
                                     <div className="home-wrapper-two product-payment mt-2">
                                         <h5 className="text-center">Payment methods</h5>
                                         <div className="payment-method d-flex justify-content-center align-items-center gap-15">
-                                            <a href="">ViSa</a>
-                                            <a href="">ViettinBank</a>
-                                            <a href="">AgriBank</a>
-                                            <a href="">BIDV</a>
-                                            <a href="">MB Bank</a>
+                                            <a href="/store/:id">ViSa</a>
+                                            <a href="/store/:id">ViettinBank</a>
+                                            <a href="/store/:id">AgriBank</a>
+                                            <a href="/store/:id">BIDV</a>
+                                            <a href="/store/:id">MB Bank</a>
                                         </div>
                                     </div>
                                 </div>
@@ -380,11 +374,10 @@ const ProductsDetails = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        {writeReviewCheck && (
-                                            <div>
-                                                <a href="">Write a Review</a>
-                                            </div>
-                                        )}
+                                        {/* Có điều kiện check  */}
+                                        <div>
+                                            <a href="/store/:id">Write a Review</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="reviews-form py-4">

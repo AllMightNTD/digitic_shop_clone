@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsLinkedin, BsYoutube, BsInstagram, BsGithub } from 'react-icons/bs';
 import newletter from '../../images/newsletter.png';
+import Image from '../Image';
 
 const Footer = () => {
     return (
@@ -21,16 +22,16 @@ const Footer = () => {
                                     dungnguyentien140602@gmail.com
                                 </a>
                                 <div className="social-icons d-flex align-items-center gap-30 mt-3">
-                                    <a className="text-white fs-4">
+                                    <a className="text-white fs-4" href="https://github.com/">
                                         <BsGithub />
                                     </a>
-                                    <a className="text-white fs-4">
+                                    <a className="text-white fs-4" href="https://www.instagram.com/">
                                         <BsInstagram />
                                     </a>
-                                    <a className="text-white fs-4">
+                                    <a className="text-white fs-4" href="https://www.linkedin.com/">
                                         <BsLinkedin />
                                     </a>
-                                    <a className="text-white fs-4">
+                                    <a className="text-white fs-4" href="https://www.youtube.com/">
                                         <BsYoutube />
                                     </a>
                                 </div>
@@ -86,7 +87,7 @@ const Footer = () => {
                     <div className="row align-items-center">
                         <div className="col-5">
                             <div className="footer-top-data d-flex gap-30 align-items-center">
-                                <img src={newletter} alt="newletters"></img>
+                                <Image src={newletter} alt="newletters"></Image>
                                 <h3 className="mb-0 text-white">Sign up for NewsLetter</h3>
                             </div>
                         </div>

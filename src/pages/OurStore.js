@@ -11,8 +11,6 @@ import camera_checkOne from '../images/camera_check1.jpg';
 import camera_checkTwo from '../images/camera_check2.jpg';
 import headphone_Featured from '../images/headphone-featured.jpg';
 import headphone_Two from '../images/headphone_2.jpg';
-import headphone_OtherOne from '../images/headphone_otherOne.jpg';
-import headphone_OtherTwo from '../images/headphone_otherTwo.jpg';
 import phone_One from '../images/phone_1.jpg';
 import phone_Two from '../images/phone_2.jpg';
 import lap_One from '../images/lap_1.jpg';
@@ -23,6 +21,7 @@ import gr from '../images/gr.svg';
 import gr2 from '../images/gr2.svg';
 import gr3 from '../images/gr3.svg';
 import gr4 from '../images/gr4.svg';
+import Image from '../components/Image';
 
 const OurStore = () => {
     const [grid, setGrid] = useState(4);
@@ -118,7 +117,6 @@ const OurStore = () => {
                                         type="checkbox"
                                         value=""
                                         id="flexCheckChecked"
-                                        checked
                                     />
                                     <label className="form-check-label" for="flexCheckChecked">
                                         Our Of Stock(0)
@@ -233,7 +231,7 @@ const OurStore = () => {
                             <div>
                                 <div className="random-products d-flex align-items-center">
                                     <div className="w-50">
-                                        <img className="img-fluid" src={headphone_Featured} alt="head-phone"></img>
+                                        <Image className="img-fluid" src={headphone_Featured} alt="head-phone"></Image>
                                     </div>
                                     <div className="w-50 random-product-content mt-4">
                                         <h5 className="product-title">
@@ -245,7 +243,7 @@ const OurStore = () => {
                                 </div>
                                 <div className="random-products d-flex align-items-center">
                                     <div className="w-50">
-                                        <img className="img-fluid" src={headphone_Featured} alt="head-phone"></img>
+                                        <Image className="img-fluid" src={headphone_Featured} alt="head-phone"></Image>
                                     </div>
                                     <div className="w-50 random-product-content  mt-4">
                                         <h5 className="product-title">
@@ -265,11 +263,10 @@ const OurStore = () => {
                                     <p className="mb-0" style={{ width: '100px' }}>
                                         Sort by
                                     </p>
-                                    <select className="form-control form-select" id="">
+                                    <select defaultValue={'DEFAULT'} className="form-control form-select" id="">
+                                        <option value="default">Select the option</option>
                                         <option value="manual">Featured</option>
-                                        <option value="best-selling" selected="selected">
-                                            Best selling
-                                        </option>
+                                        <option value="best-selling">Best selling</option>
                                         <option value="title-accending">Alphabetically, A-Z</option>
                                         <option value="Price-ascending">Price , low to hig</option>
                                         <option value="Price-descending">Price , low to hig</option>
@@ -283,16 +280,16 @@ const OurStore = () => {
                                 <p className="totla-products mb-0">21 Products</p>
                                 <div className="d-flex gap-10 align-items-center ">
                                     <div className="grid-img" onClick={() => setGrid(4)}>
-                                        <img src={gr} className="img-fluid d-block" alt="grid"></img>
+                                        <Image src={gr} className="img-fluid d-block" alt="grid"></Image>
                                     </div>
                                     <div className="grid-img" onClick={() => setGrid(2)}>
-                                        <img src={gr2} className="img-fluid d-block" alt="grid"></img>
+                                        <Image src={gr2} className="img-fluid d-block" alt="grid"></Image>
                                     </div>
                                     <div className="grid-img" onClick={() => setGrid(3)}>
-                                        <img src={gr3} className="img-fluid d-block" alt="grid"></img>
+                                        <Image src={gr3} className="img-fluid d-block" alt="grid"></Image>
                                     </div>
                                     <div className="grid-img" onClick={() => setGrid(6)}>
-                                        <img src={gr4} className="img-fluid d-block" alt="grid"></img>
+                                        <Image src={gr4} className="img-fluid d-block" alt="grid"></Image>
                                     </div>
                                 </div>
                             </div>

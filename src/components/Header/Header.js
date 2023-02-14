@@ -6,7 +6,7 @@ import wishlist from '../../images/wishlist.svg';
 import user from '../../images/user.svg';
 import cart from '../../images/cart.svg';
 import menu from '../../images/menu.svg';
-import Container from '../Container';
+import Image from '../Image';
 const Header = () => {
     return (
         <>
@@ -34,7 +34,9 @@ const Header = () => {
                     <div className="row">
                         <div className="col-2">
                             <h2 className="fw-normal">
-                                <Link to="/">Digitic.</Link>
+                                <Link className="fw-bold text-white" to="/">
+                                    Digitic Store
+                                </Link>
                             </h2>
                         </div>
                         <div className="col-5">
@@ -58,7 +60,7 @@ const Header = () => {
                                         to="/compare-product"
                                         className="links-icons d-flex align-items-center gap-10 text-white"
                                     >
-                                        <img src={compare} alt=""></img>
+                                        <Image src={compare} alt="compare"></Image>
                                         <p className="fs-7 mb-0">
                                             Compare <br /> Product
                                         </p>
@@ -70,7 +72,7 @@ const Header = () => {
                                         to="/wish-list"
                                         className="links-icons d-flex align-items-center gap-10 text-white"
                                     >
-                                        <img src={wishlist} alt=""></img>
+                                        <Image src={wishlist} alt="wishlist"></Image>
                                         <p className=" fs-7 mb-0">
                                             Favourite <br /> Wishlist
                                         </p>
@@ -82,7 +84,7 @@ const Header = () => {
                                         to="/login"
                                         className="links-icons d-flex align-items-center gap-10 text-white"
                                     >
-                                        <img src={user} alt=""></img>
+                                        <Image src={user} alt=""></Image>
                                         <p className=" fs-7 mb-0">
                                             Login My
                                             <br /> Account
@@ -95,7 +97,7 @@ const Header = () => {
                                         to="/cart/home"
                                         className="links-icons d-flex align-items-center gap-10 text-white"
                                     >
-                                        <img src={cart} alt="cart"></img>
+                                        <Image src={cart} alt="cart"></Image>
                                         <div className="d-flex flex-column gap-10">
                                             <span className="badge bg-white text-dark ">0</span>
                                             <p className="mb-0 ">$500</p>
@@ -121,7 +123,7 @@ const Header = () => {
                                             data-bs-toggle="dropdown"
                                             aria-expanded="false"
                                         >
-                                            <img src={menu} style={{ height: '22px', width: '22px' }}></img>
+                                            <Image src={menu} style={{ height: '22px', width: '22px' }}></Image>
                                             <span className="me-5 fs-7 d-inline-flex">Shop category</span>
                                         </button>
                                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">

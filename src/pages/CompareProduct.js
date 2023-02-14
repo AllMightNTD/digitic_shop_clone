@@ -8,6 +8,7 @@ import phone_Two from '../images/phone_2.jpg';
 import lap_One from '../images/lap_1.jpg';
 import cross from '../images/cross.svg';
 import Container from '../components/Container';
+import Image from '../components/Image';
 
 const CompareProduct = () => {
     const dataCompare = [
@@ -57,9 +58,9 @@ const CompareProduct = () => {
                     {dataCompare.map((item, index) => (
                         <div className="col-3" key={index}>
                             <div className="compare-product-card position-relative">
-                                <img className="position-absolute cross" src={cross} alt="cross"></img>
+                                <Image className="position-absolute cross" src={cross} alt="cross"></Image>
                                 <div className="product-card-image">
-                                    <img className="img-fluid" src={item.imageTwo}></img>
+                                    <Image className="img-fluid" src={item.imageTwo}></Image>
                                 </div>
                                 <div className="compare-product-details">
                                     <h5 className="title">{item.desc}</h5>

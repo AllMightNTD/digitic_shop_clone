@@ -2,6 +2,7 @@ import React from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
 import wish from '../images/wish.svg';
+import Image from './Image';
 
 const SpecialProduct = ({
     imageCard,
@@ -21,15 +22,15 @@ const SpecialProduct = ({
                 <div className="position-relative image_card">
                     <div className="discount-floating  position-absolute">-30%</div>
                     <div className="wish-list position-absolute">
-                        <img src={wish} alt="wishlist"></img>
+                        <Image src={wish} alt="wishlist"></Image>
                     </div>
-                    <img src={imageCard} className="img-fluid" alt="watch"></img>
+                    <Image src={imageCard} className="img-fluid" alt="watch"></Image>
                     <div className="d-flex align-items-center gap-15 image_card-others">
                         <div className="images-different d-flex align-items-center justify-content-center">
-                            <img src={imageOtherOne} className="img-fluid" alt="watch"></img>
+                            <Image src={imageOtherOne} className="img-fluid" alt="watch"></Image>
                         </div>
                         <div className="images-different d-flex align-items-center justify-content-center">
-                            <img src={imageOtherTwo} className="img-fluid" alt="watch"></img>
+                            <Image src={imageOtherTwo} className="img-fluid" alt="watch"></Image>
                         </div>
                     </div>
                 </div>

@@ -1,18 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BreadCrumb from '../components/BreadCrumb';
-import Meta from '../components/Meta';
 import { IoIosArrowBack } from 'react-icons/io';
 import tab from '../images/tab.jpg';
-import { NavLink } from 'react-router-dom';
 import Container from '../components/Container';
+import Image from '../components/Image';
 
 const PayInfo = () => {
-    let activeStyle = {
-        textDecoration: 'underline',
-    };
-
-    let activeClassName = 'underline';
     return (
         <>
             <Container className="pay-wraper  home-wrapper-two pb-5">
@@ -143,7 +136,7 @@ const PayInfo = () => {
                                         >
                                             2
                                         </span>
-                                        <img
+                                        <Image
                                             src={tab}
                                             style={{
                                                 boxShadow: '0px 0px 6px 1px rgba(0,0,0,0.1)',
@@ -151,7 +144,7 @@ const PayInfo = () => {
                                             }}
                                             className="img-fluid"
                                             alt="tab"
-                                        ></img>
+                                        ></Image>
                                     </div>
                                     <div className="">
                                         <h5 className="total-price">Tab 2</h5>
