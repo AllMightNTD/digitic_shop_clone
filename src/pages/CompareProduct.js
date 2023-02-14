@@ -6,6 +6,8 @@ import clock2 from '../images/clock_2.jpg';
 import camera_checkTwo from '../images/camera_check2.jpg';
 import phone_Two from '../images/phone_2.jpg';
 import lap_One from '../images/lap_1.jpg';
+import cross from '../images/cross.svg';
+import Container from '../components/Container';
 
 const CompareProduct = () => {
     const dataCompare = [
@@ -50,55 +52,53 @@ const CompareProduct = () => {
         <>
             <Meta title={'Compare-Product'}></Meta>
             <BreadCrumb title="Compare-Product" />
-            <div className="compare-product-wrapper py-5 home-wrapper-two">
-                <div className="px-3">
-                    <div className="row">
-                        {dataCompare.map((item, index) => (
-                            <div className="col-3" key={index}>
-                                <div className="compare-product-card position-relative">
-                                    <img className="position-absolute cross" src="images/cross.svg" alt="cross"></img>
-                                    <div className="product-card-image">
-                                        <img className="img-fluid" src={item.imageTwo}></img>
+            <Container className="compare-product-wrapper py-5 home-wrapper-two">
+                <div className="row">
+                    {dataCompare.map((item, index) => (
+                        <div className="col-3" key={index}>
+                            <div className="compare-product-card position-relative">
+                                <img className="position-absolute cross" src={cross} alt="cross"></img>
+                                <div className="product-card-image">
+                                    <img className="img-fluid" src={item.imageTwo}></img>
+                                </div>
+                                <div className="compare-product-details">
+                                    <h5 className="title">{item.desc}</h5>
+                                    <h6 className="price mb-3">$100.00</h6>
+                                    <div className="product-details d-flex justify-content-between">
+                                        <h5 className="mb-0">Brands</h5>
+                                        <p className="mb-0">{item.title}</p>
                                     </div>
-                                    <div className="compare-product-details">
-                                        <h5 className="title">{item.desc}</h5>
-                                        <h6 className="price mb-3">$100.00</h6>
-                                        <div className="product-details d-flex justify-content-between">
-                                            <h5 className="mb-0">Brands</h5>
-                                            <p className="mb-0">{item.title}</p>
-                                        </div>
-                                        <div className="product-details d-flex justify-content-between">
-                                            <h5 className="mb-0">Type</h5>
-                                            <p className="mb-0">{item.type}</p>
-                                        </div>
-                                        <div className="product-details d-flex justify-content-between">
-                                            <h5 className="mb-0">SKU</h5>
-                                            <p className="mb-0">{item.SKU}</p>
-                                        </div>
-                                        <div className="product-details d-flex justify-content-between">
-                                            <h5 className="mb-0">Availabillity</h5>
-                                            <p className="mb-0">{item.Availabillity}</p>
-                                        </div>
-                                        <div className="product-details d-flex justify-content-between">
-                                            <h5 className="mb-0">Color</h5>
-                                            <ul className="d-flex flex-wrap colors gap-10">
-                                                <li></li>
-                                                <li></li>
-                                            </ul>
-                                        </div>
-                                        <div className="product-details d-flex justify-content-between">
-                                            <h5 className="mb-0">Size</h5>
-                                            <div className="size gap-10">
-                                                <span>S</span> <span>M</span> <span>L</span>
-                                            </div>
+                                    <div className="product-details d-flex justify-content-between">
+                                        <h5 className="mb-0">Type</h5>
+                                        <p className="mb-0">{item.type}</p>
+                                    </div>
+                                    <div className="product-details d-flex justify-content-between">
+                                        <h5 className="mb-0">SKU</h5>
+                                        <p className="mb-0">{item.SKU}</p>
+                                    </div>
+                                    <div className="product-details d-flex justify-content-between">
+                                        <h5 className="mb-0">Availabillity</h5>
+                                        <p className="mb-0">{item.Availabillity}</p>
+                                    </div>
+                                    <div className="product-details d-flex justify-content-between">
+                                        <h5 className="mb-0">Color</h5>
+                                        <ul className="d-flex flex-wrap colors gap-10">
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                    <div className="product-details d-flex justify-content-between">
+                                        <h5 className="mb-0">Size</h5>
+                                        <div className="size gap-10">
+                                            <span>S</span> <span>M</span> <span>L</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-            </div>
+            </Container>
         </>
     );
 };

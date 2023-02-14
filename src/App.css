@@ -18,7 +18,9 @@
 body {
     font-family: 'Rubik', sans-serif;
 }
-
+body::-webkit-scrollbar {
+    display: none;
+}
 /* Chia 5 phần trong boostrap */
 .col-2dot4,
 .col-sm-2dot4,
@@ -28,8 +30,8 @@ body {
     position: relative;
     width: 100%;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .col-2dot4 {
     -webkit-box-flex: 0;
@@ -85,6 +87,44 @@ button {
     border: none;
     outline: none;
 }
+
+/* Featured Wrapper  */
+.feature_button-carousel {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+    color: var(--color-price-product);
+    transition: background 0.3s ease-in-out;
+}
+
+.feature_button-carousel:hover {
+    color: white;
+    background-color: var(--color-price-product);
+}
+
+.feature-wrapper {
+    margin: 0 -5px;
+}
+.feature-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.section_featured::-webkit-scrollbar {
+    display: none;
+}
+.section_featured {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none; /* khai báo sử dụng Internet Explorer, Edge */
+    scrollbar-width: none; /* sử dụng Firefox */
+    overflow-x: auto;
+    padding: 0 -15px;
+}
+.product_featured {
+    transition: 0.5s;
+}
+
 .section-heading {
     font-size: 26px;
     line-height: 24px;
@@ -224,10 +264,51 @@ footer .input-group-text {
 }
 
 /* Home Page*/
+/* Carousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+.carousel:hover .carousel-control-next {
+    right: 2%;
+}
+.carousel:hover .carousel-control-prev {
+    left: 2%;
+}
+.carousel-control-prev {
+    display: flex;
+    position: absolute;
+    top: 46%;
+    bottom: 50%;
+    left: -20%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #898990;
+    border-radius: 50%;
+    transition: left ease-in-out 0.5s;
+}
+.carousel-control-next {
+    display: flex;
+    position: absolute;
+    top: 45%;
+    bottom: 50%;
+    right: -20%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #898990;
+    border-radius: 50%;
+    transition: right ease-in-out 0.5s;
+}
 
 .main-banner-content {
     top: 15%;
-    left: 5%;
+    left: 7%;
 }
 
 .main-banner-content h4 {
@@ -241,11 +322,12 @@ footer .input-group-text {
 }
 
 .main-banner-content h5 {
-    font-size: 52px;
+    font-size: 45px;
     line-height: 64px;
     letter-spacing: -2px;
     font-weight: 500;
     text-transform: none;
+    color: black;
 }
 
 .main-banner-content p {
@@ -253,6 +335,7 @@ footer .input-group-text {
     line-height: 28px;
     letter-spacing: 0.4px;
     margin: 0 0 36px;
+    color: black;
 }
 
 /*  */

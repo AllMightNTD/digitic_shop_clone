@@ -17,6 +17,7 @@ const CartPage = () => {
                     const Component = route.component;
                     return (
                         <Route
+                            key={index}
                             path={route.path}
                             element={
                                 <ProtectedRoute>

@@ -5,6 +5,7 @@ import { publicRoutes } from './components/routes';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import DefaultLayout from './components/Layout/DefaultLayout';
+
 function App() {
     return (
         <>

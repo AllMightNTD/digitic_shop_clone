@@ -8,11 +8,13 @@ import prodcompare from '../images/prodcompare.svg';
 import view from '../images/view.svg';
 import Addcart from '../images/add-cart.svg';
 
-const ProductCard = ({ grid_home, grid, imageOne, imageTwo, title, desc, valueStar, price }) => {
+const ProductCard = ({ classname, grid_home, grid, imageOne, imageTwo, title, desc, valueStar, price }) => {
     let location = useLocation();
 
     return (
-        <div className={`${location.pathname == '/store' ? `gr-${grid}` : `col-${grid_home}`}`}>
+        <div
+            className={`${location.pathname == '/store' ? `gr-${grid} ${classname}` : `col-${grid_home} ${classname}`}`}
+        >
             <Link to="/store/:id" className="product-card position-relative">
                 <div className="wish-list position-absolute">
                     <img src={wish} alt="wishlist"></img>

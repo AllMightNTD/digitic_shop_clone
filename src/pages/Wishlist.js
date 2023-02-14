@@ -3,17 +3,14 @@ import BreadCrumb from '../components/BreadCrumb';
 import Meta from '../components/Meta';
 
 import clock1 from '../images/clock_1.jpg';
-import clock2 from '../images/clock_2.jpg';
 import camera_checkOne from '../images/camera_check1.jpg';
-import camera_checkTwo from '../images/camera_check2.jpg';
 import headphone_Featured from '../images/headphone-featured.jpg';
-import headphone_Two from '../images/headphone_2.jpg';
 import headphone_OtherOne from '../images/headphone_otherOne.jpg';
-import headphone_OtherTwo from '../images/headphone_otherTwo.jpg';
 import phone_One from '../images/phone_1.jpg';
-import phone_Two from '../images/phone_2.jpg';
 import lap_One from '../images/lap_1.jpg';
-import lap_Two from '../images/lap_2.jpg';
+
+import cross from '../images/cross.svg';
+
 const Wishlist = () => {
     const dataWish = [
         {
@@ -58,7 +55,7 @@ const Wishlist = () => {
                         {dataWish.map((item, index) => (
                             <div className="col-2" key={index} style={{ cursor: 'pointer' }}>
                                 <div className="wishlist-products bg-white position-relative">
-                                    <img className="position-absolute cross" src="images/cross.svg" alt="cross"></img>
+                                    <img className="position-absolute cross" src={cross} alt="cross"></img>
                                     <div>
                                         <img src={item.image} className="img-fluid" alt="tablet"></img>
                                     </div>

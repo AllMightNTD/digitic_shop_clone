@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsLinkedin, BsYoutube, BsInstagram, BsGithub } from 'react-icons/bs';
+import newletter from '../../images/newsletter.png';
 
 const Footer = () => {
     return (
@@ -36,7 +37,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-2">
-                            <h4 className="text-white mb-4"> Information</h4>
+                            <h5 className="text-white mb-4"> Information</h5>
                             <div className="footer-links d-flex flex-column">
                                 <Link to="/privacy-policy" className="text-white py-2 mb-1">
                                     Privacy Policy
@@ -54,7 +55,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-2">
-                            <h4 className="text-white mb-4">Accounts</h4>
+                            <h5 className="text-white mb-4">Accounts</h5>
                             <div className="footer-links d-flex flex-column">
                                 <Link className="text-white py-2 mb-1">Search</Link>
                                 <Link className="text-white py-2 mb-1">About us</Link>
@@ -64,7 +65,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-2">
-                            <h4 className="text-white mb-4">Quick Links</h4>
+                            <h5 className="text-white mb-4">Quick Links</h5>
                             <div className="footer-links d-flex flex-column">
                                 <Link className="text-white py-2 mb-1">Laptops</Link>
                                 <Link className="text-white py-2 mb-1">HeadPhones</Link>
@@ -74,7 +75,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-2">
-                            <h4 className="text-white mb-4">Our App</h4>
+                            <h5 className="text-white mb-4">Our App</h5>
                             <div></div>
                         </div>
                     </div>
@@ -85,7 +86,7 @@ const Footer = () => {
                     <div className="row align-items-center">
                         <div className="col-5">
                             <div className="footer-top-data d-flex gap-30 align-items-center">
-                                <img src="images/newsletter.png" alt="newletters"></img>
+                                <img src={newletter} alt="newletters"></img>
                                 <h3 className="mb-0 text-white">Sign up for NewsLetter</h3>
                             </div>
                         </div>
