@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import BreadCrumb from '../components/BreadCrumb';
 import Meta from '../components/Meta';
-
+import { loginUser } from '../actions/userAction';
+import validationLogin from '../actions/validationLogin';
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [validationMsg, setValidationMsg] = useState({});
+    const dispatch = useDispatch();
+    const refEmail = useRef();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(loginUser(email, password));
+    };
     return (
         <>
             <Meta title={'Login'}></Meta>
@@ -14,12 +25,15 @@ const Login = () => {
                         <div className="col-12">
                             <div className="login-card">
                                 <h3 className="text-center text-dark mb-3">Login</h3>
-                                <form action="" className="d-flex flex-column gap-15">
+                                <form onSubmit={handleSubmit} className="d-flex flex-column gap-15">
                                     <div>
                                         <input
                                             type="email"
                                             placeholder="Email"
                                             name="email"
+                                            value={email}
+                                            ref={refEmail}
+                                            onChange={(e) => setEmail(e.target.value)}
                                             className="form-control"
                                         ></input>
                                     </div>
@@ -27,6 +41,8 @@ const Login = () => {
                                         <input
                                             className="form-control"
                                             type="password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
                                             placeholder="Password"
                                             name="password"
                                         ></input>

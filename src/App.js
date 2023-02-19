@@ -5,19 +5,13 @@ import { publicRoutes } from './components/routes';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import DefaultLayout from './components/Layout/DefaultLayout';
+import Notification from './ultils/Notification';
 
 function App() {
     return (
         <>
-            {/* <Header />
-            <Routes>
-                {publicRoutes.map((route, index) => {
-                    const Component = route.component;
-                    return <Route path={route.path} element={<Component />}></Route>;
-                })}
-            </Routes>
-            <Footer /> */}
             <Router>
+                <Notification />
                 <div className="App">
                     <Routes>
                         {publicRoutes.map((route, index) => {

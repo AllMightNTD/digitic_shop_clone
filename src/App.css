@@ -14,9 +14,18 @@
     --color-border: #ededed;
     --color-btn: #febd69;
 }
+.box {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+}
 
 body {
     font-family: 'Rubik', sans-serif;
+}
+ul {
+    margin: 0;
+    padding: 0;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -1333,4 +1342,14 @@ footer .input-group-text {
 .shipping-inner div a.change {
     flex: 1;
     color: var(--color-price-product);
+}
+
+/* box-tippy  */
+.box-tippy {
+    cursor: pointer;
+    color: var(--color-price-product);
+}
+
+.box-tippy li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }

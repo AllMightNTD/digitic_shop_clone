@@ -1,4 +1,6 @@
 import React from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import { NavLink, Link } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import compare from '../../images/compare.svg';
@@ -7,7 +9,30 @@ import user from '../../images/user.svg';
 import cart from '../../images/cart.svg';
 import menu from '../../images/menu.svg';
 import Image from '../Image';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from '../../actions/userAction';
+import axios from 'axios';
 const Header = () => {
+    const userData = useSelector((state) => state.user.user);
+    console.log(userData);
+    const dispatch = useDispatch();
+    const handleLogout = () => {
+        // await axios
+        //     .get('http://localhost:5000/api/user/logout')
+        //     .then((res) => {
+        //         console.log(res.data);
+        //         localStorage.removeItem('user');
+        //         localStorage.removeItem('token');
+        //         dispatch({ type: 'LOGOUT_SUCCESS' });
+        //     })
+        //     .catch((err) => {
+        //         throw new Error(err.message);
+        //     });
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        window.location.href = '/';
+    };
+
     return (
         <>
             <header className="header-top-strip py-3">
@@ -78,19 +103,50 @@ const Header = () => {
                                         </p>
                                     </Link>
                                 </div>
-                                <div>
-                                    {' '}
-                                    <Link
-                                        to="/login"
-                                        className="links-icons d-flex align-items-center gap-10 text-white"
+                                {userData ? (
+                                    <Tippy
+                                        placement="bottom"
+                                        interactive
+                                        content={
+                                            <ul className="box-tippy px-0 py-0 bg-white list-unstyled d-flex flex-column">
+                                                <li className="px-3 py-3">
+                                                    <Link to="/store" className=" text-dark">
+                                                        Đơn mua của toi
+                                                    </Link>
+                                                </li>
+                                                <li className="px-3 py-3">
+                                                    <Link to="#" className="text-dark ">
+                                                        Tài khoản của toi
+                                                    </Link>
+                                                </li>
+                                                <li onClick={handleLogout} className="px-3 py-3 ">
+                                                    Đăng xuất
+                                                </li>
+                                            </ul>
+                                        }
                                     >
-                                        <Image src={user} alt=""></Image>
-                                        <p className=" fs-7 mb-0">
-                                            Login My
-                                            <br /> Account
-                                        </p>
-                                    </Link>
-                                </div>
+                                        <div className="links-icons d-flex align-items-center gap-10 text-white">
+                                            <Image src={user} alt="user"></Image>
+
+                                            <p className=" fs-7 mb-0">
+                                                {userData.user.firstname + ' ' + userData.user.lastname}
+                                            </p>
+                                        </div>
+                                    </Tippy>
+                                ) : (
+                                    <div>
+                                        <Link
+                                            to="/login"
+                                            className="links-icons d-flex align-items-center gap-10 text-white"
+                                        >
+                                            <p className=" fs-7 mb-0">
+                                                Login
+                                                <br />
+                                                My Account
+                                            </p>
+                                        </Link>
+                                    </div>
+                                )}
                                 <div>
                                     {' '}
                                     <Link
