@@ -1,24 +1,29 @@
-import axios from 'axios';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../actions/userAction';
 import Container from '../components/Container';
 import { Link } from 'react-router-dom';
-import user from '../images/user.svg';
-import Image from '../components/Image';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiOutlineUser } from 'react-icons/ai';
 import { SlNotebook } from 'react-icons/sl';
 import { GrNotification } from 'react-icons/gr';
 import { TbBuildingWarehouse } from 'react-icons/tb';
 import { RiMoneyEuroCircleLine } from 'react-icons/ri';
+import validation from '../actions/validationLogin';
 const UpdateInfo = () => {
     const dispatch = useDispatch();
     const [values, setValues] = useState({ firstname: '', lastname: '', email: '', mobile: '' });
+    const [erros, setErros] = useState({});
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(updateUser(values.firstname, values.lastname, values.email, values.mobile, values.password));
+        const validationErrors = validation(values, false);
+        if (Object.keys(validationErrors).length === 0) {
+            dispatch(updateUser(values.firstname, values.lastname, values.email, values.mobile, values.password));
+        } else {
+            setErros(validationErrors);
+        }
     };
+    console.log(erros);
     console.log(values);
     const handleInput = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value });
@@ -52,7 +57,7 @@ const UpdateInfo = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="text-secondary">
+                                <Link to="/forgot-password" className="text-secondary">
                                     Đổi Mật Khẩu
                                 </Link>
                             </li>
@@ -77,8 +82,8 @@ const UpdateInfo = () => {
                     </div>
                     <div className="form_update py-4 px-4">
                         <div className="title_update-user gap-10 pb-2">
-                            <p className="mb-0 fs-4 text-dark font-weight-light">Hồ Sơ Của Tôi</p>
-                            <p className="fs-7">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+                            <p className="mb-0 fs-4 text-dark font-weight-light">Hồ Sơ</p>
+                            <p className="fs-7">Thay đổi thông tin của bạn nếu bạn muốn</p>
                         </div>
 
                         <div className="pay-left-data pb-4">
@@ -97,6 +102,7 @@ const UpdateInfo = () => {
                                         id="floatingInputValue"
                                         placeholder="Firstname"
                                     />
+                                    {erros ? <p className="text-danger fst-italic">{erros.firstname}</p> : <></>}
                                     <label for="floatingInputValue" className="text-secondary">
                                         First name
                                     </label>
@@ -110,6 +116,7 @@ const UpdateInfo = () => {
                                         id="floatingInputValue"
                                         placeholder="Last name"
                                     />
+                                    {erros ? <p className="text-danger fst-italic">{erros.lastname}</p> : <></>}
                                     <label for="floatingInputValue" className="text-secondary">
                                         Last name
                                     </label>
@@ -123,6 +130,7 @@ const UpdateInfo = () => {
                                         id="floatingInputValue"
                                         placeholder="Address"
                                     />
+                                    {erros ? <p className="text-danger fst-italic">{erros.email}</p> : <></>}
                                     <label for="floatingInputValue" className="text-secondary">
                                         Email
                                     </label>
@@ -135,6 +143,7 @@ const UpdateInfo = () => {
                                         onChange={handleInput}
                                         className="form-control"
                                     ></input>
+                                    {erros ? <p className="text-danger fst-italic">{erros.mobile}</p> : <></>}
                                 </div>
                                 <div className="w-100 py-3 d-flex justify-content-between align-items-center">
                                     <Link to="/" className="text-dark">

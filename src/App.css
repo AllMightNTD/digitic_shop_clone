@@ -1350,6 +1350,9 @@ footer .input-group-text {
     color: var(--color-price-product);
 }
 
+.box-tippy a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
 .box-tippy li:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }

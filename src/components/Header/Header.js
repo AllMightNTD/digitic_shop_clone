@@ -106,17 +106,15 @@ const Header = () => {
                                         interactive
                                         content={
                                             <ul className="box-tippy px-0 py-0 bg-white list-unstyled d-flex flex-column">
-                                                <li className="px-3 py-3">
-                                                    <Link to="/store" className=" text-dark">
-                                                        Đơn mua của toi
-                                                    </Link>
-                                                </li>
-                                                <li className="px-3 py-3">
-                                                    <Link to="/update-user" className="text-dark ">
-                                                        Tài khoản của toi
-                                                    </Link>
-                                                </li>
-                                                <li onClick={handleLogout} className="px-3 py-3 ">
+                                                <Link to="/store" className=" text-dark px-3 py-3">
+                                                    Đơn mua của toi
+                                                </Link>
+
+                                                <Link to="/update-user" className="text-dark px-3 py-3">
+                                                    Tài khoản của toi
+                                                </Link>
+
+                                                <li onClick={handleLogout} className="px-3 py-3 px-3 py-3 ">
                                                     Đăng xuất
                                                 </li>
                                             </ul>

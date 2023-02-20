@@ -9,7 +9,7 @@ export const routesPublic = {
     productDetails: '/store/:id',
     compareProduct: '/compare-product',
     wishlist: '/wish-list',
-    fotgotPass: 'forgot-pass',
+    fotgotPass: '/forgot-password',
     signUp: '/sign-up',
     resetPass: '/reset-password',
     privacyPolicy: '/privacy-policy',

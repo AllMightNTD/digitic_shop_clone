@@ -18,7 +18,7 @@ export const registerUser = (firstname, lastname, email, mobile, password) => (d
                     type: 'REGISTER_SUCCESS',
                     payload: res.data,
                 });
-                window.location.href = '/';
+                window.location.href = '/login';
             }
             if (res.data.status === false) {
                 toast.error(res.data.msg, {
@@ -106,5 +106,55 @@ export const updateUser = (firstname, lastname, email, password) => (dispatch) =
                     },
                 });
             }
+        });
+};
+
+export const forgotPass = (email) => (dispatch) => {
+    axios
+        .post('http://localhost:5000/api/user/forgotpass', {
+            email: email,
+        })
+        .then((res) => {
+            if (res.data.status === 'success') {
+                toast.success(res.data.msg, {
+                    autoClose: 1000,
+                    onClose: () => {
+                        window.location.href = '/reset-password';
+                    },
+                });
+            }
+            if (res.data.status === false) {
+                toast.error(res.data.error);
+            }
+        })
+        .catch((err) => {
+            dispatch({ type: 'REGISTER_FAIL', payload: err.response.data });
+        });
+};
+
+export const resetPassword = (email, verificationcode, newPassword) => (dispatch) => {
+    axios
+        .post('http://localhost:5000/api/user/resetpass', {
+            email: email,
+            verificationcode: verificationcode,
+            newPassword: newPassword,
+        })
+        .then((res) => {
+            console.log(res.data);
+            if (res.data.status === 'success') {
+                toast.success(res.data.msg, {
+                    autoClose: 1000,
+                    onClose: () => {
+                        window.location.href = '/login';
+                    },
+                });
+            }
+            if (res.data.status === false) {
+                console.log(res.data.msg);
+                toast.error(res.data.msg, { autoClose: 1000 });
+            }
+        })
+        .catch((err) => {
+            dispatch({ type: 'REGISTER_FAIL', payload: err.response.data });
         });
 };

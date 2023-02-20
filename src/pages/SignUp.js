@@ -23,7 +23,7 @@ const SignUp = () => {
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
         e.preventDefault();
-        const validationErrors = validation(values);
+        const validationErrors = validation(values, true);
         if (Object.keys(validationErrors).length === 0) {
             dispatch(registerUser(values.firstname, values.lastname, values.email, values.mobile, values.password));
         } else {

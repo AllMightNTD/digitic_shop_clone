@@ -1,5 +1,6 @@
-function validation(values) {
+function validation(values, haspassword = true) {
     let errors = {};
+    console.log(values.password);
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
     const mobileRegex = /^([+]\d{2})?\d{10}$/;
@@ -21,12 +22,14 @@ function validation(values) {
     if (!emailRegex.test(values.email)) {
         errors.email = 'Email is not valid';
     }
-    if (values.password === '') {
-        errors.password = 'Password should not be empty';
-    }
-    if (!passwordRegex.test(values.password)) {
-        errors.password =
-            'Password is not valid , password needs 8 to 30 characters including uppercase, lowercase and special characters';
+    if (haspassword) {
+        if (values.password === '') {
+            errors.password = 'Password should not be empty';
+        }
+        if (!passwordRegex.test(values.password)) {
+            errors.password =
+                'Password is not valid , password needs 8 to 30 characters including uppercase, lowercase and special characters';
+        }
     }
     // if (values.password === '') {
     //     errors.password = 'Password should not be empty';
