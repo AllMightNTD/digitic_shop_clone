@@ -17,6 +17,7 @@ export const routesPublic = {
     cartPage: '/cart/*',
     termOfService: '/term-of-services',
     shippingPolicy: '/shipping-policy',
+    updateUser: '/update-user',
 };
 export const cartRoutes = {
     cart: '/home',

@@ -64,3 +64,47 @@ export const loginUser = (email, password) => (dispatch) => {
             dispatch({ type: 'LOGIN_FAIL', payload: err.response.data });
         });
 };
+
+export const updateUser = (firstname, lastname, email, password) => (dispatch) => {
+    const token = localStorage.getItem('token');
+    console.log(token);
+    axios
+        .put(
+            'http://localhost:5000/api/user/update',
+            {
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                password: password,
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            },
+        )
+        .then((res) => {
+            if (res.data.status === 'success') {
+                console.log(res.data);
+                localStorage.setItem('user', JSON.stringify(res.data));
+                dispatch({
+                    type: 'UPDATE_SUCCESS',
+                    payload: res.data,
+                });
+                toast.success('Update Successfully', {
+                    autoClose: 1000,
+                    onClose: () => {
+                        window.location.href = '/';
+                    },
+                });
+            }
+            if (res.data.status === false) {
+                toast.error(res.data.msg, {
+                    autoClose: 1000,
+                    onClose: () => {
+                        window.location.href = '/login';
+                    },
+                });
+            }
+        });
+};

@@ -23,6 +23,7 @@ import ShippingPolicy from '../../pages/ShippingPolicy';
 import { routesPublic } from '../../config/routes';
 import { cartRoutes } from '../../config/routes';
 import { privateRoutes } from '../../config/routes';
+import UpdateInfo from '../../pages/UpdateInfo';
 const publicRoutes = [
     { path: routesPublic.home, component: Home },
     { path: routesPublic.about, component: About },
@@ -44,6 +45,7 @@ const publicRoutes = [
     { path: routesPublic.refundPolicy, component: RefundPolicy },
     { path: routesPublic.cartPage, component: CartPage },
     { path: routesPublic.termOfService, component: TermOfSerVice },
+    { path: routesPublic.updateUser, component: UpdateInfo },
     { path: routesPublic.shippingPolicy, component: ShippingPolicy, layout: null },
 ];
 

@@ -120,7 +120,9 @@ const PayInfo = () => {
                                         <IoIosArrowBack className="mb-1 me-2" />
                                         Return to Cart
                                     </Link>
-                                    <Link className="btn-buy bg-danger">Continue to Shipping</Link>
+                                    <Link to="/cart/shipping" className="btn-buy bg-danger">
+                                        Continue to Shipping
+                                    </Link>
                                 </div>
                             </form>
                         </div>
