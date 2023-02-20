@@ -9,13 +9,10 @@ import user from '../../images/user.svg';
 import cart from '../../images/cart.svg';
 import menu from '../../images/menu.svg';
 import Image from '../Image';
-import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from '../../actions/userAction';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
 const Header = () => {
     const userData = useSelector((state) => state.user.user);
     console.log(userData);
-    const dispatch = useDispatch();
     const handleLogout = () => {
         // await axios
         //     .get('http://localhost:5000/api/user/logout')
@@ -115,7 +112,7 @@ const Header = () => {
                                                     </Link>
                                                 </li>
                                                 <li className="px-3 py-3">
-                                                    <Link to="#" className="text-dark ">
+                                                    <Link to="/update-user" className="text-dark ">
                                                         Tài khoản của toi
                                                     </Link>
                                                 </li>
