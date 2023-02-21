@@ -18,11 +18,17 @@ export const routesPublic = {
     termOfService: '/term-of-services',
     shippingPolicy: '/shipping-policy',
     updateUser: '/update-user',
+    dashboard: '/dashboard/*',
 };
 export const cartRoutes = {
     cart: '/home',
     shippingPay: '/shipping',
     paymentCart: '/payment',
+};
+
+export const dashboardRoute = {
+    createProduct: '/create-product',
+    listProduct: '/list-products',
 };
 
 export const privateRoutes = {

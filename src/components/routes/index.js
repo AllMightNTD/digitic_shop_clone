@@ -20,10 +20,14 @@ import PrivacyPolicy from '../../pages/PrivacyPolicy';
 import RefundPolicy from '../../pages/RefundPolicy';
 import TermOfSerVice from '../../pages/TermOfSerVice';
 import ShippingPolicy from '../../pages/ShippingPolicy';
-import { routesPublic } from '../../config/routes';
+import { dashboardRoute, routesPublic } from '../../config/routes';
 import { cartRoutes } from '../../config/routes';
 import { privateRoutes } from '../../config/routes';
 import UpdateInfo from '../../pages/UpdateInfo';
+import Dashboard from '../../pages/Dashboard';
+import CreateProduct from '../../pages/CreateProduct';
+import ListProduct from '../../pages/ListProduct';
+
 const publicRoutes = [
     { path: routesPublic.home, component: Home },
     { path: routesPublic.about, component: About },
@@ -47,6 +51,7 @@ const publicRoutes = [
     { path: routesPublic.termOfService, component: TermOfSerVice },
     { path: routesPublic.updateUser, component: UpdateInfo },
     { path: routesPublic.shippingPolicy, component: ShippingPolicy, layout: null },
+    { path: routesPublic.dashboard, component: Dashboard, layout: null },
 ];
 
 const cartRoute = [
@@ -71,4 +76,15 @@ const privateRoute = [
     },
 ];
 
-export { publicRoutes, cartRoute, privateRoute };
+const dashboardRouter = [
+    {
+        path: dashboardRoute.createProduct,
+        component: CreateProduct,
+    },
+    {
+        path: dashboardRoute.listProduct,
+        component: ListProduct,
+    },
+];
+
+export { publicRoutes, cartRoute, privateRoute, dashboardRouter };

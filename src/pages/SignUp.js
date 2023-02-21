@@ -7,11 +7,6 @@ import { registerUser } from '../actions/userAction';
 import { useSelector } from 'react-redux';
 import validation from '../actions/validationLogin';
 const SignUp = () => {
-    // const [firstname, setFirstname] = useState();
-    // const [lastname, setLastName] = useState();
-    // const [email, setEmail] = useState();
-    // const [mobile, setMobilenumber] = useState();
-    // const [password, setPassword] = useState();
     const [erros, setErros] = useState({});
     const [values, setValues] = useState({
         firstname: '',

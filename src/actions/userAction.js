@@ -158,3 +158,41 @@ export const resetPassword = (email, verificationcode, newPassword) => (dispatch
             dispatch({ type: 'REGISTER_FAIL', payload: err.response.data });
         });
 };
+
+export const createProduct = (title, description, price, color, category, brand, quantity) => (dispatch) => {
+    const token = localStorage.getItem('token');
+    console.log(token);
+    axios
+        .post(
+            'http://localhost:5000/api/product',
+            {
+                title: title,
+                description: description,
+                price: price,
+                color: color,
+                category: category,
+                brand: brand,
+                quantity: quantity,
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            },
+        )
+        .then((res) => {
+            console.log(res.data);
+            if (res.data.status === 'success') {
+                toast.success(res.data.msg, {
+                    autoClose: 1000,
+                });
+            }
+            if (res.data.status === false) {
+                console.log(res.data.msg);
+                toast.error(res.data.msg, { autoClose: 1000 });
+            }
+        })
+        .catch((err) => {
+            dispatch({ type: 'REGISTER_FAIL', payload: err.response.data });
+        });
+};
