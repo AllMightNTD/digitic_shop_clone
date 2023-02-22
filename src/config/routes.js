@@ -27,7 +27,7 @@ export const cartRoutes = {
 };
 
 export const dashboardRoute = {
-    createProduct: '/create-product',
+    createProduct: '/create-products',
     listProduct: '/list-products',
 };
 

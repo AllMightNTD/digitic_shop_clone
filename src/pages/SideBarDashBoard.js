@@ -16,12 +16,7 @@ const SideBarDashBoard = () => {
                     id="menu"
                 >
                     <li className="nav-item">
-                        <NavLink className="ms-1" to="/">
-                            Home
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="ms-1" to="/dashboard/create-product">
+                        <NavLink className="ms-1" to="/dashboard/create-products">
                             Create Products
                         </NavLink>
                     </li>

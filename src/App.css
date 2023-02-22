@@ -92,7 +92,8 @@ a {
 ul {
     list-style-type: none;
 }
-button {
+button,
+select {
     border: none;
     outline: none;
 }
@@ -1368,4 +1369,28 @@ footer .input-group-text {
 }
 .title_update-user {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* List product */
+.filter_product button {
+    padding: 6px 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1);
+}
+.filter_product button:hover {
+    background-color: #ef3939;
+    color: white;
+}
+.filter_by-price .form-floating input {
+    height: 40px;
+}
+.filter_by-price .form-floating label {
+    padding: 8px;
+}
+.filter_by-price button {
+    padding: 6px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: black;
+    background-color: white;
 }
