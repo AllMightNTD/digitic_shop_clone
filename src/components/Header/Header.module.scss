@@ -1,0 +1,82 @@
+/* CSS Header Part here */
+.header-top-strip {
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border-bottom);
+}
+.header-top-strip p {
+    font-size: 14px;
+}
+.header-upper {
+    background-color: var(--color-background);
+}
+.input-group {
+    width: 90%;
+}
+.input-group input {
+    padding: 5px 12px;
+    font-size: 14px;
+}
+.input-group-text {
+    background-color: #febd69;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: inherit;
+}
+.row {
+    align-items: center;
+}
+
+.header-upper-links img {
+    width: 35px;
+    height: 35px;
+}
+
+.links-icons {
+    font-size: 14px;
+}
+
+.header-bottom {
+    background-color: var(--color-background-header-bottom);
+}
+.header-bottom .menu-links a {
+    color: white;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 18px;
+    line-height: 18px;
+    letter-spacing: 0.3s;
+    text-transform: uppercase;
+}
+
+.header-bottom .dropdown button {
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+    line-height: 18px;
+    letter-spacing: 0.3s;
+    text-transform: uppercase;
+}
+.header-bottom .dropdown button:focus {
+    box-shadow: none;
+}
+.header-bottom .dropdown .dropdown-menu {
+    background-color: var(--color-background);
+    width: 100%;
+    transform: translate3d(0px, 57px, 0px) !important;
+}
+
+.header-bottom .dropdown-item {
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border-bottom);
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+.header-bottom .dropdown-item:hover {
+    background-color: transparent;
+    color: #febd69 !important;
+}
+
+.hello {
+    background-color: red;
+}

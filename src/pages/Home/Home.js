@@ -28,9 +28,9 @@ import brand7 from '../../images/brand-07.png';
 import brand8 from '../../images/brand-08.png';
 
 import Marquee from 'react-fast-marquee';
-import BlogCard from '../../components/BlogCard';
-import ProductCard from '../../components/ProductCard';
-import SpecialProduct from '../../components/SpecialProduct';
+import BlogCard from '../../components/Child Component/BlogCard';
+import ProductCard from '../../components/Child Component/ProductCard';
+import SpecialProduct from '../../components/Child Component/SpecialProduct';
 import smartbanner from '../../images/smart-banner.jpg';
 import lapbanner from '../../images/lap_banner.jpg';
 import phonebanner from '../../images/phone_banner.jpg';
@@ -85,7 +85,7 @@ import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 
 import { SmoothHorizontalScrolling } from '../../ultils';
 
-import Container from '../../components/Container';
+import Container from '../../components/Child Component/Container';
 
 const Home = () => {
     const servicedata = [

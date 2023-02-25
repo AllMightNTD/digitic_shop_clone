@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'tippy.js/dist/tippy.css';
 import { NavLink, Link } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
@@ -11,29 +13,50 @@ import menu from '../../images/menu.svg';
 import Image from '../Image';
 import { useSelector } from 'react-redux';
 const Header = () => {
+    const [showHeader, setShowHeader] = useState();
+
     const userData = useSelector((state) => state.user.user);
-    console.log(userData);
     const handleLogout = () => {
-        // await axios
-        //     .get('http://localhost:5000/api/user/logout')
-        //     .then((res) => {
-        //         console.log(res.data);
-        //         localStorage.removeItem('user');
-        //         localStorage.removeItem('token');
-        //         dispatch({ type: 'LOGOUT_SUCCESS' });
-        //     })
-        //     .catch((err) => {
-        //         throw new Error(err.message);
-        //     });
         localStorage.removeItem('user');
         localStorage.removeItem('token');
         window.location.href = '/';
+    };
+    const handleCheckAdmin = (e) => {
+        e.preventDefault();
+        if (userData.user.role === 'admin') {
+            toast.success('Bạn là admin', {
+                autoClose: 1000,
+                onClose: () => {
+                    window.location.href = '/dashboard/create-products';
+                },
+            });
+        } else {
+            toast.error('Bạn không phải admin hãy đăng nhập lại để có quyền truy cập', {
+                autoClose: 1000,
+                onClose: () => {
+                    window.location.href = '/login';
+                },
+            });
+        }
+    };
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    const handleScroll = () => {
+        if (window.pageYOffset > 300) {
+            setShowHeader(true);
+        } else {
+            setShowHeader(false);
+        }
     };
 
     return (
         <>
             <header className="header-top-strip py-3">
-                <div className="px-3">
+                <div className="px-3 ">
                     <div className="row">
                         <div className="col-6">
                             <p className="text-white mb-0">Free Shipping Over $100 & Free Returns</p>
@@ -51,13 +74,13 @@ const Header = () => {
                 </div>
             </header>
 
-            <div className="header-upper py-3">
+            <div className={`header-upper py-3 ${showHeader ? 'header--show' : ''}`}>
                 <div className="px-3">
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-2 d-flex align-items-center">
                             <h2 className="fw-normal">
-                                <Link className="fw-bold text-white" to="/">
-                                    Digitic Store
+                                <Link className="text-white" to="/">
+                                    Digitic.
                                 </Link>
                             </h2>
                         </div>
@@ -107,15 +130,23 @@ const Header = () => {
                                         content={
                                             <ul className="box-tippy px-0 py-0 bg-white list-unstyled d-flex flex-column">
                                                 <Link to="/store" className=" text-dark px-3 py-3">
-                                                    Đơn mua của toi
+                                                    Đơn mua của tôi
                                                 </Link>
 
                                                 <Link to="/update-user" className="text-dark px-3 py-3">
-                                                    Tài khoản của toi
+                                                    Tài khoản của tôi
                                                 </Link>
 
                                                 <li onClick={handleLogout} className="px-3 py-3 px-3 py-3 ">
                                                     Đăng xuất
+                                                </li>
+
+                                                <li
+                                                    onClick={handleCheckAdmin}
+                                                    className="px-3 py-3 px-3 py-3 "
+                                                    type="submit"
+                                                >
+                                                    Dashboard for Admin
                                                 </li>
                                             </ul>
                                         }

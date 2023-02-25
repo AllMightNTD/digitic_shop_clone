@@ -185,6 +185,45 @@ export const createProduct = (title, description, price, color, category, brand,
             if (res.data.status === 'success') {
                 toast.success(res.data.msg, {
                     autoClose: 1000,
+                    onClose: () => {
+                        window.location.href = '/dashboard/list-products';
+                    },
+                });
+            }
+            if (res.data.status === false) {
+                console.log(res.data.msg);
+                toast.error(res.data.msg, { autoClose: 1000 });
+            }
+        })
+        .catch((err) => {
+            dispatch({ type: 'REGISTER_FAIL', payload: err.response.data });
+        });
+};
+
+export const createBlogs = (title, description, category) => (dispatch) => {
+    const token = localStorage.getItem('token');
+    axios
+        .post(
+            'http://localhost:5000/api/blog',
+            {
+                title: title,
+                description: description,
+                category: category,
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            },
+        )
+        .then((res) => {
+            console.log(res.data);
+            if (res.data.status === 'success') {
+                toast.success(res.data.msg, {
+                    autoClose: 1000,
+                    onClose: () => {
+                        window.location.href = '/dashboard/list-blogs';
+                    },
                 });
             }
             if (res.data.status === false) {
